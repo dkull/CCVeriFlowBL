@@ -28,11 +28,7 @@ now = time.time()
 mainClass = Classes.MainClass(h5file)
 mainClass.printStats()
 mainClass.fingerprint()
-print "Whole program ran for {0} seconds".format(time.time()-now)
+print "\nWhole program ran for {0} seconds".format(time.time()-now)
 
-fp = mainClass.fingerprints
-fp = sorted(fp, key=attrgetter('flowCount'))
-for i in fp:
-    print i
 
 h5file.close()

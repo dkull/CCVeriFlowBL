@@ -6,3 +6,5 @@ basePath = "/home/user/PycharmProjects/Flowy/"
 # Used for parsing
 blacklistsPath = "/home/user/Desktop/Blacklists/"
 includedBlacklists = ["emergingthreats_botcc.txt"]
+resolution=60*60
+minFlows = 100
