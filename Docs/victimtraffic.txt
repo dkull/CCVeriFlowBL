@@ -1,0 +1,6 @@
+* Extract all victim IP's to file, eg. victims.ip
+* Convert list of IPs to nfdump filter
+* nfdump -f victims.filter -R ~/Mount/Flows/ > victims.flow
+* nfdump victims.flow | python victimstats.py > victimtraffic
+
+Now you have a file with every victim and the hours of activity

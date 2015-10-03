@@ -1,0 +1,18 @@
+1.
+    Extract behavioural specific traffic information from victims
+    Try to match malware activity with victim activity
+    Try to correlate that information for other victims of same malware
+2.
+    Generate fingerprints for malware
+    Compare fingerprints of malware with same name
+    Try to find discrepancies to confirm or flag entries
+3.
+    Extract statistics about legit web services
+    Create fingerprints for them
+    Compare them to malware to confirm or flag entries
+4.
+    Use obtained fingerprints with ML to confirm findings
+    and ML itself.
+5.
+    Output findings and hopefully reduce needed activies(review, etc.)
+    to the lowest minimum possible level.
