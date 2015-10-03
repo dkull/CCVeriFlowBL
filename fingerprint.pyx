@@ -46,7 +46,7 @@ class FingerPrintPerIP(object):
             self.dayFingerPrints[day] = FingerPrintPerDay(self.ip,day,dayFlows)
             self.daySequence.append(day)
 
-        self.printPlot()
+        #self.printPlot()
 
     def printPlot(self):
         values = []

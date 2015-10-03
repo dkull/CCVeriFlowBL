@@ -1,4 +1,5 @@
 from tables import *
+from collections import Counter
 
 class BlacklistEntry(IsDescription):
     ip = StringCol(15)
@@ -78,6 +79,22 @@ class DBWrapper(object):
     #
     def getAllBlacklistIp(self):
         return set(self._getBlacklist(field='ip'))
+
+    def getAllVictimIpTrafficCount(self):
+        srcips = self._getFlow(field='srcip')
+        dstips = self._getFlow(field='dstip')
+        blacklistedips = dict(map(lambda x: [x,x], self.getAllBlacklistIp()))
+
+        goodips = Counter()
+        allips = zip(srcips,dstips)
+        for i in allips:
+            if i[0] not in blacklistedips:
+                goodips[i[0]] += 1
+            if i[1] not in blacklistedips:
+                goodips[i[1]] += 1
+
+        return goodips
+
 
     def getAllBlacklistDate(self):
         return set(self._getBlacklist(field='date'))
